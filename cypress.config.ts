@@ -1,6 +1,6 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from 'cypress'
 
-module.exports = defineConfig({
+export default defineConfig({
   "videoUploadOnPasses": false,
   e2e: {
     setupNodeEvents(on, config) {
