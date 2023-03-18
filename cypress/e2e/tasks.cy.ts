@@ -1,5 +1,7 @@
 
-describe('Tasks', () => {
+describe('Tarefas', () => {
+
+  context('Cadastro', () => {
     it('Deve cadastrar uma nova tarefa', () => {
 
       const taskName = 'Ler um livro Jornada QA'
@@ -36,3 +38,4 @@ describe('Tasks', () => {
     })
 
   })
+})

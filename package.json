@@ -5,6 +5,11 @@
   "main": "index.js",
   "author": "Francisco Doglas",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run --headless",
+    "cy:open": "cypress open"
+  },
   "devDependencies": {
     "@testing-library/cypress": "^9.0.0",
     "cypress": "^12.2.0",
