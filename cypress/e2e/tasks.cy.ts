@@ -27,5 +27,12 @@ describe('Tasks', () => {
       cy.get('.swal2-html-container')
       .should('be.visible')
       .should('have.text', 'Task already exists!')
+    });
+
+    it('Campo obrigatório', () => {
+      cy.createTask()
+      //Validando a mensagem com invoke
+      cy.isRequired('This is a required field')
     })
+
   })
