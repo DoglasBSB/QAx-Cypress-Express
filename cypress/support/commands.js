@@ -9,9 +9,8 @@
 // ***********************************************
 import '@testing-library/cypress/add-commands'
 
-
 Cypress.Commands.add('createTask', (taskName = '')=> {
-  cy.visit('http://localhost:8080');
+  cy.visit('/');
 
   //Alias 
   cy.get('input[placeholder="Add a new Task"]').as('inputTask')
@@ -40,7 +39,7 @@ Cypress.Commands.add('removeTaskByName', (taskName)=> {
     //requisição para deletar massa de teste
     cy.api({
       method: 'DELETE',
-      url: 'http://localhost:3333/helper/tasks',
+      url: Cypress.env('apiUrl') + '/helper/tasks',
       body: {name: taskName}
     }).then(response => {
       expect(response.status).to.eq(204)
@@ -50,7 +49,7 @@ Cypress.Commands.add('removeTaskByName', (taskName)=> {
 Cypress.Commands.add('postTask', (task)=> {
     cy.api({
      method: 'POST',
-     url: 'http://localhost:3333/tasks',
+     url:  Cypress.env('apiUrl') + '/tasks',
      body: task
    }).then(response => {
      expect(response.status).to.eq(201)

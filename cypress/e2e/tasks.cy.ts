@@ -34,7 +34,7 @@ describe("Tarefas", () => {
   });
 
   context("Atualização", () => {
-    it("deve concluir uma tarefa", () => {
+    it("Deve concluir uma tarefa", () => {
       //cria um objeto
       const task = {
         name: "Automatizar testes",
@@ -44,7 +44,7 @@ describe("Tarefas", () => {
       cy.removeTaskByName(task.name);
       cy.postTask(task);
 
-      cy.visit("http://localhost:8080");
+      cy.visit("/");
 
       cy.contains("p", task.name)
         .parent()
@@ -62,7 +62,7 @@ describe("Tarefas", () => {
   });
 
   context("Exclusão", () => {
-    it("deve remover uma tarefa", () => {
+    it("Deve remover uma tarefa", () => {
       //cria um objeto
       const task = {
         name: "Estudar Javascript",
@@ -72,7 +72,7 @@ describe("Tarefas", () => {
       cy.removeTaskByName(task.name);
       cy.postTask(task);
 
-      cy.visit("http://localhost:8080");
+      cy.visit("/");
 
       cy.contains("p", task.name)
         .parent()

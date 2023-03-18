@@ -1,8 +1,6 @@
-describe("Home", () => {
-  it("webapp deve estar online", () => {
-    cy.visit("http://localhost:8080");
+describe("HomePage", () => {
+  it("Webapp deve estar online", () => {
+    cy.visit("/");
     cy.title().should("eq", "Gerencie suas tarefas com Mark L");
   });
-
-  it("", () => {});
 });
